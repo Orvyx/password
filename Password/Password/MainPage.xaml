@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Password"
+             x:Class="Password.MainPage">
+    <ContentPage.Padding>
+        <OnPlatform 
+            x:TypeArguments="Thickness"
+            iOS="0, 40, 0, 0"
+            Android="0, 20, 0, 0">
+        </OnPlatform>
+    </ContentPage.Padding>
+    <StackLayout>
+        <Label
+           x:Name="label_keyword"
+           
+           FontSize="Large"
+           TextColor="Black"
+           Text="keyword"
+           VerticalOptions="Center"
+           HorizontalOptions="Center" />
+        <Entry 
+           x:Name="entry_keyword"
+           Placeholder="i.e, facebook, twitter, google"
+           PlaceholderColor="Gray"
+            Keyboard="Email"
+           VerticalOptions="Center"
+           HorizontalOptions="Center"
+           WidthRequest="300"/>
+        <Label
+           x:Name="label_passphrase"
+           FontSize="Large"
+           TextColor="Black"
+           Text="passphrase"
+           VerticalOptions="Center"
+           HorizontalOptions="Center" />
+        <Entry 
+           x:Name="entry_passphrase"
+           IsPassword="True"
+           Placeholder="password"
+           PlaceholderColor="Gray"
+           VerticalOptions="Center"
+           HorizontalOptions="Center" 
+           WidthRequest="300"/>
+        <Label
+           x:Name="label_special"
+           FontSize="Large"
+           TextColor="Black"
+           Text="special characters"
+           VerticalOptions="Center"
+           HorizontalOptions="Center" />
+        <Switch
+            x:Name="switch_special"
+            IsToggled="True"
+            HorizontalOptions="Center" />
+        <Label
+            x:Name="label_length"
+            FontSize="Large"
+            TextColor="Black"
+            Text="password length: "
+            VerticalOptions="Center"
+            HorizontalOptions="Center" />
+        <Slider
+            x:Name="slider_length"
+            VerticalOptions="Center"
+            HorizontalOptions="Center" 
+            ValueChanged ="Slider_Changed"
+            WidthRequest="300"
+            Value ="8" />
+        <Button 
+            x:Name="button_submit"
+            Text="Generate Password"
+            FontSize="Large"
+            Clicked="Button_Clicked"
+            WidthRequest="300"/>
+        <Label
+            x:Name="label_password"
+            IsVisible="False"
+            HorizontalOptions="Center" 
+            Text="your password is:"/>
+        <Button
+            x:Name="button_copy"
+            Text="Copy to Clipboard"
+            FontSize="Large"
+            Clicked="Button_Copy"
+            WidthRequest="300"/>
+        
+    </StackLayout>
+</ContentPage>
